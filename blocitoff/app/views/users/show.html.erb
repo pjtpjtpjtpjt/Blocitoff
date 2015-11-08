@@ -20,14 +20,30 @@
          <h2>Welcome to Blocitoff</h2>
        <% end %>
        
+      <div>
+          <ul>
+           
+           
+           <% @user = current_user %>
+           
+      <%= render partial: 'items/form', locals: {user: @user} %>
+     
+  
+          </ul>
+      </div>
+    
+  
+       
        </div>
     </div>
   </div>
 
   
   <li>
-  <%= link_to('Logout', destroy_user_session_path) %>        
+  <%= link_to('Logout', destroy_user_session_path) %>
   </li>
+  
+
   
   
 <% else %>

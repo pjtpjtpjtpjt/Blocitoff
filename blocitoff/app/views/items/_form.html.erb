@@ -1,0 +1,10 @@
+<%# byebug %>
+
+<%= form_for [@user,Item.new] do |f| %>
+    <div class="form-group">
+        <%= f.label :item %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter item name" %>
+        <%= f.submit %>
+        
+    </div>
+<% end %>
