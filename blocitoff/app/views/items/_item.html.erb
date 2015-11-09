@@ -1,19 +1,33 @@
-<h1>Your Items</h1>
- 
- <div class="row">
-  <div class="col-md-4">
-   
-  </div>
- </div>
-   
- <div class="col-md-8">
 
-  <ul> <% @user.items.each do |item| %></ul>
-  <%= item.name %> <br>
-  <% end %>
+<table class="table table-hover table-bordered">
+ <table align="right">
+   <thead>
+    <tr><td colspan="2">
+    <h1>Your Items</h1>
+    </td>
+    </tr>
+    
+    
+     <tr>
+       <th class="text-left">Item Description</th>
+       <th class="text-left">Days Left</th>
+       <th class="text-left">Complete</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+      <% @user.items.each do |item| %>
+       <td class="col-md-8"><%= item.name %></td>
+       <td class="col-md-1">placeholder</td>
+       <td class="col-md-1 text-right">placeholder </td>
+      </tr>
+       <% end %>
+   </tbody>
+ </table>
+</table>
 
-  
-  <%= link_to "Home", root_path %>
+
+
   
  </div>
 

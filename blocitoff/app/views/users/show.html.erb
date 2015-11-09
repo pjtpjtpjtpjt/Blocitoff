@@ -2,42 +2,46 @@
 
 
 <% if user_signed_in? %>
- 
-  
-  <div class="row">
-   <div class="col-md-8">
-     <div class="media">
-       
-      <h2>Hello <%= current_user.email %> </h2>
-       <% avatar_url = current_user.avatar_url(current_user, 42) %>
-       <% unless avatar_url.nil? %>
-         <div class="media-left">
 
-           <%= image_tag avatar_url, class: 'media-object' %>
-         </div>
-         
-         <h2>you're signed in!</h2>
-         <h2>Welcome to Blocitoff</h2>
-       <% end %>
-       
-      <div>
-          <ul>
-           
-           
-           <% @user = current_user %>
-           
-      <%= render partial: 'items/form', locals: {user: @user} %>
-     
-  
-          </ul>
-      </div>
-    
-  
-       
+
+   <div class="row">
+     <div class="col-xs-6">
+       <div>
+           <ul>
+            <% @user = current_user %>
+            <%= render partial: 'items/item', locals: {user: @user} %>
+           </ul>
        </div>
-    </div>
-  </div>
+      </div>
+     </div>
+     
 
+
+ 
+  <!--<div class="container">-->
+   <div class="row">
+    <div class="col-xs-8">
+        
+       <h2>Hello <%= current_user.email %> </h2>
+        <% avatar_url = current_user.avatar_url(current_user, 42) %>
+        <% unless avatar_url.nil? %>
+          
+          <div class="media-left">
+            <%= image_tag avatar_url, class: 'media-object' %>
+          </div>
+          
+          <h2>you're signed in!</h2>
+          <h2>Welcome to Blocitoff</h2>
+        <% end %>
+        
+        <% @user = current_user %>
+        <%= render partial: 'items/form', locals: {user: @user} %>
+        
+       </div>
+     </div>
+   </div>
+  <!--</div> -->
+      
   
   <li>
   <%= link_to('Logout', destroy_user_session_path) %>

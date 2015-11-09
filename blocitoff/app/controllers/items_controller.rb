@@ -8,7 +8,8 @@ def create
   
   @item = @user.items.create(item_params)
   
-  render partial: 'items/item', locals: {current_user: @user, item: @item }
+
+  redirect_to :back
      
 end
   
@@ -17,6 +18,7 @@ end
 def item_params
   params.require(:item).permit!
 end
+  
   
   
 end
