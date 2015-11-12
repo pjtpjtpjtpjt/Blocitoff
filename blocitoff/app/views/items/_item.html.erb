@@ -1,34 +1,6 @@
-
-<table class="table table-hover table-bordered">
- <table align="right">
-   <thead>
-    <tr><td colspan="2">
-    <h1>Your Items</h1>
-    </td>
-    </tr>
-    
-    
-     <tr>
-       <th class="text-left">Item Description</th>
-       <th class="text-left">Days Left</th>
-       <th class="text-left">Complete</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-      <% @user.items.each do |item| %>
-       <td class="col-md-8"><%= item.name %></td>
-       <td class="col-md-1">placeholder</td>
-       <td class="col-md-1 text-right">placeholder </td>
-      </tr>
-       <% end %>
-   </tbody>
- </table>
-</table>
-
-
-
-  
- </div>
-
- 
+<tr id="item-<%= item.id %>">
+   <td class="col-md-8"><%= item.name %></td>
+   <td class="col-md-1">placeholder</td>
+   <td class="col-md-1 text-right"><%= link_to "",  user_item_path(current_user,item), method: :delete, class: 'glyphicon glyphicon-ok', remote: true %> </td>
+ </tr>
+     

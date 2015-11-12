@@ -3,20 +3,28 @@ class ItemsController < ApplicationController
 
 
 def create
+  @item = current_user.items.create(item_params)
+  redirect_to :back
+end
+
+def destroy
+  @item = current_user.items.find(params[:id])
   
-  @user = current_user
-  
-  @item = @user.items.create(item_params)
+  @item.destroy
   
 
-  redirect_to :back
-     
+  respond_to do |format|
+      format.html
+      format.js
+    
+    end
+    
 end
   
   private
   
 def item_params
-  params.require(:item).permit!
+  params.require(:item).permit(:name)
 end
   
   
