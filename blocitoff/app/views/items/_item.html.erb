@@ -2,5 +2,5 @@
    <td class="col-md-8"><%= item.name %></td>
    <td class="col-md-1"><%= distance_of_time_in_words(Time.now - item.created_at, 7.days) %></td>
    <td class="col-md-1 text-right"><%= link_to "",  user_item_path(current_user,item), method: :delete, class: 'glyphicon glyphicon-ok', remote: true %> </td>
- </tr>
+</tr>
      
